@@ -1,0 +1,14 @@
+
+<div  style="background-color: gainsboro; 
+                margin: 40px;
+                padding: 20px; border-radius: 10px; ">
+    <ul>
+        <h4>Confusion Matrix</h4>
+            {% for item in values.cm %}
+                {{item}} <br>
+            {% endfor %}
+        <h4>Accuracy</h4>
+            {{ values.acc }}
+    </ul>
+</div>
+
