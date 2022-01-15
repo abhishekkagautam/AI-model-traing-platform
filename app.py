@@ -33,7 +33,7 @@ def data_model():
         problem = problemTypeDic[problemType]
         model = modelNameDic[modelName]    
         userData = [title,firstName,lastName,email,contact,problem,model]
-        print("User Data : ",end="")
+        
         print(*userData,sep=", " )
 
         print(type(dataSet))
