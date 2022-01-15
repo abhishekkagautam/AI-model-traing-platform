@@ -34,9 +34,6 @@ def data_model():
         model = modelNameDic[modelName]    
         userData = [title,firstName,lastName,email,contact,problem,model]
         
-        print(*userData,sep=", " )
-
-        print(type(dataSet))
         dataframe = pd.read_csv(dataSet)
         X = dataframe.loc[:, dataframe.columns != ytrainName] # Features
         y = dataframe[ytrainName]
@@ -70,9 +67,9 @@ def decisionTreeClassifier(X_train, X_test, y_train, y_test):
     model = model.fit(X_train,y_train)
     y_pred = model.predict(X_test)
     acc=metrics.accuracy_score(y_test, y_pred)
-    print("Accuracy:",acc)
+  
     cm = confusion_matrix(y_test, y_pred)
-    print(cm)
+
     values = {"cm":cm,"acc":acc}
     return(values)
 
@@ -82,7 +79,7 @@ def randomForestClassifier(X_train, X_test, y_train, y_test):
     model = model.fit(X_train,y_train)
     y_pred = model.predict(X_test)
     acc=metrics.accuracy_score(y_test, y_pred)
-    print("Accuracy:",acc)
+   
     cm = confusion_matrix(y_test, y_pred)
     values = {"cm":cm,"acc":acc}
     return(values)
@@ -92,7 +89,7 @@ def linearRegression(X_train, X_test, y_train, y_test):
     model = model.fit(X_train,y_train)
     y_pred = model.predict(X_test)
     acc=metrics.accuracy_score(y_test, y_pred)
-    print("Accuracy:",acc)
+    
     cm = confusion_matrix(y_test, y_pred)
     values = {"cm":cm,"acc":acc}
     return(values)
@@ -102,7 +99,7 @@ def logisticRegression(X_train, X_test, y_train, y_test):
     model = model.fit(X_train,y_train)
     y_pred = model.predict(X_test)
     acc=metrics.accuracy_score(y_test, y_pred)
-    print("Accuracy:",acc)
+  
     cm = confusion_matrix(y_test, y_pred)
     values = {"cm":cm,"acc":acc}
     return(values)
@@ -113,7 +110,7 @@ def sVM(X_train, X_test, y_train, y_test):
     model = model.fit(X_train,y_train)
     y_pred = model.predict(X_test)
     acc=metrics.accuracy_score(y_test, y_pred)
-    print("Accuracy:",acc)
+  
     cm = confusion_matrix(y_test, y_pred)
     values = {"cm":cm,"acc":acc}
     return(values)
@@ -123,7 +120,7 @@ def kNN(X_train, X_test, y_train, y_test):
     model = model.fit(X_train,y_train)
     y_pred = model.predict(X_test)
     acc=metrics.accuracy_score(y_test, y_pred)
-    print("Accuracy:",acc)
+   
     cm = confusion_matrix(y_test, y_pred)
     values = {"cm":cm,"acc":acc}
     return(values)
