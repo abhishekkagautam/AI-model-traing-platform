@@ -3,12 +3,30 @@
                 margin: 40px;
                 padding: 20px; border-radius: 10px; ">
     <ul>
+        {% extends "layout.html" %}
+
+        {% block y %}
+          
+           {% if session.name %}
+              You are Register {{ session.name }} <a href="/logout">logout</a>.
+           {% else %}
+              You are not Register. <a href="/login">login</a>.
+           {% endif %}
+        
         <h4>Confusion Matrix</h4>
             {% for item in values.cm %}
                 {{item}} <br>
             {% endfor %}
         <h4>Accuracy</h4>
             {{ values.acc }}
+        <h4>Accuracy</h4>     
+        <a href="/return-file" target="blank">
+            <button>
+                Download
+            </button>
+        </a>
+    
     </ul>
 </div>
+{% endblock %}
 
